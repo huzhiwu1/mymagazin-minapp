@@ -1,0 +1,51 @@
+<!-- pages/index/index.wxml -->
+<!-- <text>pages/index/index.wxml</text> -->
+<view class="recommend">
+    <view class="content">
+        <text class="date">三月二十八日</text>
+        <text class="comment">点评人推荐问：我就是人工智能，前面那个"人工"</text>
+        <image mode="widthFix" src="/images/list/recommend-image.png" />
+    </view>
+    <view class="label">
+        <text class="add">+</text>
+        <text>男性穿搭</text>
+        <text>古典音乐</text>
+        <text>心理</text>
+        <text>深度阅读</text>
+        <text>人生整理术</text>
+        <text>读书</text>
+        <text>日韩剧</text>
+        <text>吃喝攻略</text>
+        <text class="more">...</text>
+    </view>
+</view>
+<view class="list-container">
+    <view class="article">
+        <view class="user">
+            <image src="/images/1.jpg" class="user-image"></image>
+            <text>胡志武</text>
+            <text>等19人马克了</text>
+        </view>
+        <view class="content">
+            <view class="main-content">
+                <view class="content-left">
+                    <text class="main-title">《我不是药神》：惜命的最好方式不是养生，而是管理情绪</text>
+                    <text class="title">世界真的会惩罚，那些总是忽视自己内心的人</text>
+                </view>
+               <view class="img-box">
+                    <image class="content-image" src="/images/list/article/1.png"></image>
+               </view>
+            </view>
+        </view>
+        <view class="label">
+            <view class="label-left">
+                <text>心理</text>
+            </view>
+            <view class="label-right">
+                <image src="/images/icon/Icon_more.png"></image>
+                <image src="/images/icon/Icon_relay.png"></image>
+                <image src="/images/icon/Icon_circle.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

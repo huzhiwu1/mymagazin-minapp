@@ -1,0 +1,125 @@
+/* pages/index/index.wxss */
+
+.recommend{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:0 30rpx;
+}
+.content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+}
+.date{
+    font-size:54rpx;
+    letter-spacing:10rpx;
+}
+.date::after{
+    content:"";
+    display:block;
+    height:6rpx;
+    width:120rpx;
+    margin:20rpx auto;
+    background-color:#999;
+}
+.recommend .comment{
+    display:block;
+    max-width:100%;
+    text-align:center;
+    font-size:28rpx;
+    margin-bottom:40rpx;
+}
+.content image{
+    width:100%;
+}
+.label{
+    width:100%;
+    margin-top:30rpx;
+}
+.label text{
+    display:inline-block;
+    font-size:28rpx;
+    padding:10rpx 20rpx;
+    margin:10rpx ;
+    border:1px solid #000;
+}
+.add{
+    background-color:#000;
+    color:#fff;
+}
+
+
+
+/* 文章部分 */
+.list-container{
+    padding-top:40rpx;
+    background-color:rgba(0,0,0,.1);
+}
+.article{
+    display:flex;
+    flex-direction:column;
+    /* align-items:center; */
+    margin:10rpx 30rpx;
+    padding:0 20rpx;
+    background-color:#fff;
+}
+.user{
+   margin:10rpx 0;
+}
+.user-image{
+    width:70rpx;
+    height:70rpx;
+    border-radius:50%;
+    margin-right:20rpx;
+    vertical-align:middle;
+}
+.user text{
+   font-size:30rpx;
+}
+.main-content{
+    margin-top:20rpx;
+  display:flex;
+  width:100%;
+  justify-content: flex-start;
+}
+.content-left{
+    
+    flex:3 3 auto;
+   
+   /* margin-right:160rpx; */
+}
+.img-box{
+    min-width:160rpx;
+    height:160rpx;
+    /* min-height:160rpx; */
+    flex:1 1 auto;
+    margin:0 15rpx 0 30rpx; 
+}
+.img-box .content-image{
+   width:100%;
+   height:100%;
+}
+.main-title{
+    font-size:40rpx;
+    display:block
+}
+.title{
+    font-size:28rpx;
+    color:#666;
+}
+.label-left{
+    display:inline-block;
+}
+.label-right{
+    float:right;
+}
+.label-right image{
+    width:50rpx;
+    height:50rpx;
+    margin:10rpx 10rpx;
+  
+    
+    vertical-align: middle;
+}
