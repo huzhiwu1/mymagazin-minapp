@@ -2,49 +2,53 @@
 <!-- <text>pages/index/index.wxml</text> -->
 <view class="recommend">
     <view class="content">
-        <text class="date">三月二十八日</text>
-        <text class="comment">点评人推荐问：我就是人工智能，前面那个"人工"</text>
-        <image mode="widthFix" src="/images/list/recommend-image.png" />
+        <text class="date">{{recommend.date}}</text>
+        <text class="comment">{{recommend.title}}</text>
+        <image mode="widthFix" src="{{recommend.imgSrc}}" />
     </view>
-    <view class="label">
+    <view class="label" >
         <text class="add">+</text>
-        <text>男性穿搭</text>
+        <!-- <text>男性穿搭</text>
         <text>古典音乐</text>
         <text>心理</text>
         <text>深度阅读</text>
         <text>人生整理术</text>
         <text>读书</text>
         <text>日韩剧</text>
-        <text>吃喝攻略</text>
-        <text class="more">...</text>
+        <text>吃喝攻略</text> -->
+        
+        <text wx:for="{{markType}}" wx:key="{{id}}">{{item.type}}</text>
+   
+       
+        <image class="more"src="/image/icon/Icon_more.png" />
     </view>
 </view>
-<view class="list-container">
+<view class="list-container" wx:for="{{articleList}}" wx:key="{{id}}">
     <view class="article">
         <view class="user">
-            <image src="/images/1.jpg" class="user-image"></image>
-            <text>胡志武</text>
-            <text>等19人马克了</text>
+            <image src="{{item.markPeopleAvatar}}" class="user-image"></image>
+            <text>{{item.markPeople}}</text>
+            <text>等{{item.markCount}}人马克了</text>
         </view>
         <view class="content">
             <view class="main-content">
                 <view class="content-left">
-                    <text class="main-title">《我不是药神》：惜命的最好方式不是养生，而是管理情绪</text>
-                    <text class="title">世界真的会惩罚，那些总是忽视自己内心的人</text>
+                    <text class="main-title">{{item.articleTitle}}</text>
+                    <text class="title"></text>
                 </view>
                <view class="img-box">
-                    <image class="content-image" src="/images/list/article/1.png"></image>
+                    <image class="content-image" src="{{item.articleImgSrc}}"></image>
                </view>
             </view>
         </view>
         <view class="label">
             <view class="label-left">
-                <text>心理</text>
+                <text>{{item.articleType}}</text>
             </view>
             <view class="label-right">
-                <image src="/images/icon/Icon_more.png"></image>
-                <image src="/images/icon/Icon_relay.png"></image>
-                <image src="/images/icon/Icon_circle.png"></image>
+                <image src="/image/icon/Icon_more.png"></image>
+                <image src="/image/icon/Icon_relay.png"></image>
+                <image src="/image/icon/Icon_circle.png"></image>
             </view>
         </view>
     </view>

@@ -12,7 +12,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getHomeData();
+  },
+  getHomeData:function(){
+    var that = this;
+    wx.request({
+      url:"https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/home",
+      type:"GET",
+    
+      success:function(res){
+        that.setData({
+          articleList:res.data.articleList,
+          markType:res.data.markType,
+          recommend:res.data.recommend,
+        })
+      }
+    })
   },
 
   /**
