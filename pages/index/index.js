@@ -29,7 +29,13 @@ Page({
       }
     })
   },
-
+  showMore:function(e){
+    console.log(e);
+    let type = e.currentTarget.dataset.articletype
+    wx.showActionSheet({
+      itemList:['内容过期了','内容和'+type+'不相关','不再显示来自'+type+'的内容']
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -41,7 +47,55 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // wx.showToast({
+    //   title:"测试消息框",
+    //   icon:"success",
+    //   duration:2000,
+    //   success:function(){
+    //     console.log("success");
+    //   },
+    //   fail:function(){
+    //     console.log("fail");
+    //   },
+    //   complete:function(){
+    //     console.log("complete")
+    //   }
+    // })
+    // wx.showModal({
+    //   title:"模拟对话框",
+    //   content:"这里是内容",
+    //   showCancel:true,//是否显示取消按钮
+    //   cancelText:'这是取消',//取消按钮的文字
+    //   cancelColor:'#000',//取消按钮的颜色
+    //   confirmText:"确定吗",//确定按钮的文字
+    //   confirmColor:'#fff',//确定按钮的颜色
+    //   success:function(res){
+    //     console.log(res.confirm);//确认则是true
+    //     console.log(res.cancel);//取消则是false
+    //   },
 
+    // })
+    // wx.showLoading({
+    //   title:"提示内容",
+    //   mask:true,//显示透明蒙层
+    //   success:function(){
+    //     console.log("success");
+    //   }
+    // })
+    // setTimeout(function(){
+    //   wx.hideLoading();//必须主动隐藏loading模拟框
+    // },2000)
+
+    // wx.showActionSheet({
+    //   itemList:['首页','读书','天气'],//按钮组
+    //   itemColor:'#0077ff',//按钮的颜色
+    //   success:function(res){
+    //     console.log(res.tapIndex);//知道用户按的按钮的序号
+    //   },
+    //   fail:function(res){
+    //     console.log(res.errMsg)
+    //   }
+    // })
   },
 
   /**
