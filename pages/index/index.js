@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // articleLike:{
+    //   0:false,
+    //   1:true,
+    //   2:false,
+    //   3:true,
+    //   4:false,
+    //   5:true,
+    //   6:false,
+    //   7:true
+    // }
   },
 
   /**
@@ -13,6 +22,16 @@ Page({
    */
   onLoad: function (options) {
     this.getHomeData();
+    this.getArticleLike();
+  },
+  getArticleLike:function(){
+    let articleLike = wx.getStorageSync("articleLike");
+    if(!articleLike){
+      articleLike = {}
+    }
+    this.setData({
+      articleLike:articleLike,
+    })
   },
   getHomeData:function(){
     var that = this;
@@ -35,6 +54,17 @@ Page({
     wx.showActionSheet({
       itemList:['内容过期了','内容和'+type+'不相关','不再显示来自'+type+'的内容']
     })
+  },
+
+  onLike:function(e){
+    console.log(e.currentTarget)
+    let articleIndex = e.currentTarget.dataset.articleindex;
+    let isLike = this.data.articleLike[articleIndex];
+    this.data.articleLike[articleIndex] = !isLike;
+    this.setData({
+      articleLike:this.data.articleLike
+    })
+    wx.setStorageSync("articleLike",this.data.articleLike)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -47,7 +47,7 @@
                 <button class="share-btn" open-type="share">
                     <image src="/image/icon/Icon_relay.png" />
                 </button>
-                <image src="/image/icon/Icon_circle.png"></image>
+                <image bindtap="onLike" data-articleIndex="{{index}}" src="{{articleLike[index]?'/image/icon/Icon_circle_fill.png':'/image/icon/Icon_circle.png'}}"></image>
             </view>
         </view>
     </view>
