@@ -1,70 +1,46 @@
-/* pages/index/index.wxss */
-
-.recommend{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    padding:0 30rpx;
-}
-.content{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+/* pages/type/index.wxss */
+.container{
     width:100%;
+    
+    margin:0;
+    padding:0;
+    background-color:rgba(0,0,0,0.1);
 }
-.date{
-    font-size:54rpx;
-    letter-spacing:10rpx;
-}
-.date::after{
-    content:"";
-    display:block;
-    height:6rpx;
-    width:120rpx;
-    margin:20rpx auto;
-    background-color:#999;
-}
-.recommend .comment{
-    display:block;
-    max-width:100%;
-    text-align:center;
-    font-size:28rpx;
-    margin-bottom:40rpx;
-    line-height:36rpx;
-}
-.content image{
+.header{
     width:100%;
+    padding:0
+}
+.type-img{
+    width:100%;
+    height:400rpx;
+}
+.type{
+    width:80%;
+    margin:0 auto;
+    background-color:#fff;
+    position:relative;
+    bottom:100rpx;
+    padding:16rpx 20rpx;
+}
+.type .title{
+    font-size:56rpx;
 }
 .label{
-    width:100%;
-    margin-top:30rpx;
+    overflow:auto;
 }
-.label text{
-    display:inline-block;
-    font-size:28rpx;
-    padding:10rpx 20rpx;
-    margin:10rpx ;
-    border:1px solid #000;
-}
-.more{
-    width:46rpx;
-    height:46rpx;
-    border:1px solid #000;
-    padding:7rpx 20rpx;
-    margin:10rpx ;
-    vertical-align:middle;
-}
-.add{
-    background-color:#000;
-    color:#fff;
+.label-img{
+    width:50rpx;
+    height:50rpx;
+    margin:10rpx 10rpx;
+    float:right;
+    
+    vertical-align: middle;
 }
 
-
-
-/* 文章部分 */
+/* 文章列表 */
 .list-container{
     padding-top:40rpx;
-    background-color:rgba(0,0,0,.1);
+   
 }
 .article{
     display:flex;

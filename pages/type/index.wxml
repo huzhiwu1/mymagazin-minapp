@@ -1,0 +1,48 @@
+<!-- pages/type/index.wxml -->
+<!-- <text>pages/type/index.wxml</text> -->
+<view class="container">
+    <view class="header">
+        <image mode="widthFix"class="type-img" src="{{headerData.imgSrc}}" />
+        <view class="type">
+            <view>
+                <text class="title">{{headerData.title}}</text>
+            </view>
+            <view class="label">
+                <image class="label-img" src="/image/icon/Icon_relay.png"></image>
+                <image class="label-img" src="/image/icon/Icon_more.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="list-container" wx:for="{{articleList}}" wx:key="{{id}}">
+        <view class="article">
+            <view class="user">
+                <image src="{{item.markPeopleAvatar}}" class="user-image"></image>
+                <text>{{item.markPeople}}</text>
+                <text>等{{item.markCount}}人马克了</text>
+            </view>
+            <view class="content">
+                <view class="main-content">
+                    <view class="content-left">
+                        <text class="main-title">{{item.articleTitle}}</text>
+                        <text class="title"></text>
+                    </view>
+                    <view class="img-box">
+                        <image class="content-image" src="{{item.articleImgSrc}}"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="label">
+                <view class="label-left">
+                    <text>{{item.publishTime}}</text>
+                </view>
+                <view class="label-right">
+                    <image bindtap="showMore" data-articleType="{{item.articleType}}" src="/image/icon/Icon_more.png"></image>
+                    <button class="share-btn" open-type="share">
+                        <image src="/image/icon/Icon_relay.png" />
+                    </button>
+                    <image bindtap="onLike" data-articleIndex="{{index}}" src="{{articleLike[index]?'/image/icon/Icon_circle_fill.png':'/image/icon/Icon_circle.png'}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

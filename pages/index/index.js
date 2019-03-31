@@ -66,6 +66,13 @@ Page({
     })
     wx.setStorageSync("articleLike",this.data.articleLike)
   },
+  onArticleTypeTap:function(e){
+    let typeId = e.currentTarget.dataset.articletypeid;
+    // console.log(typeId);
+    wx.redirectTo({
+      url:'/pages/type/index?typeid='+typeId,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

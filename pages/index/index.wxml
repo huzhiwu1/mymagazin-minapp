@@ -16,7 +16,7 @@
         <text>读书</text>
         <text>日韩剧</text>
         <text>吃喝攻略</text> -->
-        <text wx:for="{{markType}}" wx:key="{{id}}">{{item.type}}</text>
+        <text wx:for="{{markType}}" bindtap="onArticleTypeTap" data-articleTypeId="{{item.typeId}}"wx:key="{{id}}">{{item.type}}</text>
         <image class="more" src="/image/icon/Icon_more.png" />
     </view>
 </view>
