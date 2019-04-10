@@ -1,4 +1,5 @@
 // pages/type/index.js
+let request = require("../../utils/request");
 Page({
 
   /**
@@ -14,25 +15,47 @@ Page({
   onLoad: function (options) {
     let typeId = options.typeid;
     let that = this;
-    
-    typeId = (typeId+1)%3;
+
+    typeId = (typeId + 1) % 3;
     console.log(typeId)
-    wx.request({
-      url:"https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getArticleTypeTitleInfo/"+typeId,
-      // type:"GET",
+    // wx.request({
+    //   url: "https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getArticleTypeTitleInfo/" + typeId,
+    //   // type:"GET",
+    //   success: function (res) {
+    //     if (res.data.code == 0) {
+    //       // console.log(res);
+    //       that.setData({
+    //         headerData: res.data.data,
+    //       })
+    //     }else{
+    //       wx.showToast({
+    //         title:"请求错误",
+    //         icon:"none"
+    //       })
+    //     }
+
+    //   },
+    //   fail:function(){
+    //     wx.showToast({
+    //       "title":"请求错误",
+    //       icon:"none",
+    //     })
+    //   }
+    // });
+    request({
+      url:"/getArticleTypeTitleInfo/" + typeId,
       success:function(res){
-        // console.log(res);
         that.setData({
-          headerData:res.data.data,
+          headerData:res,
         })
       }
-    });
-    wx.request({
-      url:"https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getArticleTypeList/"+typeId,
-      success:function(res){
+    })
+    request({
+      url: "/getArticleTypeList/" + typeId,
+      success: function (res) {
         console.log(res);
         that.setData({
-          articleList:res.data.data,
+          articleList: res,
         })
       }
     })

@@ -69,7 +69,7 @@ Page({
   onArticleTypeTap:function(e){
     let typeId = e.currentTarget.dataset.articletypeid;
     // console.log(typeId);
-    wx.redirectTo({
+    wx.navigateTo({
       url:'/pages/type/index?typeid='+typeId,
     })
   },
