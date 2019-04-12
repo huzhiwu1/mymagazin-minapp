@@ -12,6 +12,7 @@ Page({
       "/image/list/article/3.png"
     ],
     articleDetail:{},
+    poster:true,
   },
 
   /**
@@ -38,7 +39,16 @@ Page({
   onReady: function () {
 
   },
-
+  onplay:function(){
+    let videoContext = wx.createVideoContext("video",this);
+    console.log(videoContext);
+    videoContext.play();
+    var poster = !this.data.poster;
+    this.setData({
+      poster:poster,
+    })
+    
+  },
   /**
    * 生命周期函数--监听页面显示
    */

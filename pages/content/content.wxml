@@ -1,5 +1,6 @@
 <!-- pages/content/content.wxml -->
 <!-- <text>pages/content/content.wxml</text> -->
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
 <view class="container">
     <view class="header">
         <text class="title">{{articleDetail.title}}</text>
@@ -10,17 +11,22 @@
         <text class="pushTime">{{articleDetail.publishTime}}</text>
     </view>
     <view class="showPannel">
-        <swiper autoplay="{{true}}"
-                indicator-dots="{{true}}"
-                interval="{{2000}}"
-                duration="{{500}}"
-                circular="{{true}}">
-        <block wx:for="{{articleDetail.banner}}" wx:key="{{this}}">
-            <swiper-item >
-               <image src="{{item}}"  />
-            </swiper-item>
-        </block>
+        <swiper wx:if="{{articleDetail.banner.length>0}}" autoplay="{{true}}" indicator-dots="{{true}}" interval="{{2000}}" duration="{{500}}" circular="{{true}}">
+            <block wx:for="{{articleDetail.banner}}" wx:key="{{this}}">
+                <swiper-item>
+                    <image src="{{item}}" />
+                </swiper-item>
+            </block>
         </swiper>
+        <video id="video" wx:elif="{{articleDetail.video.src}}" width="100%" height="100%" src="{{articleDetail.video.src}}" poster="/image/1.jpg">
+            <cover-view wx:if="{{poster}}"class="cover-img" bindtap="onplay">
+                <cover-image src="{{articleDetail.video.poster}}"></cover-image>
+                <cover-view class="control-img">
+                    <cover-image class="control-img2" src="/image/icon/play.png"></cover-image>
+                    <cover-view>{{articleDetail.video.duration}}</cover-view>
+                </cover-view>
+            </cover-view>
+        </video>
     </view>
     <view class="content">
         <text decode="true">{{filter(articleDetail.content)}}</text>
@@ -29,16 +35,3 @@
         <text class="read">阅读:{{articleDetail.readNum}}</text>
     </view>
 </view>
-<wxs module="filter">
-    var filter = function(text){
-        if(text){
-            var reg = getRegExp("\\n","g");
-            console.log(reg);
-            return text.replace(reg,"\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
-        }else{
-           return 
-        }
-        
-    }
-    module.exports =filter 
-</wxs>

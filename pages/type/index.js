@@ -16,7 +16,7 @@ Page({
     let typeId = options.typeid;
     let that = this;
 
-    typeId = (typeId + 1) % 3;
+    typeId = (typeId) % 3+1;
     console.log(typeId)
     // wx.request({
     //   url: "https://easy-mock.com/mock/5bb8c1c63ccc501a316e3ccb/magazine/getArticleTypeTitleInfo/" + typeId,

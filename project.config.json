@@ -43,7 +43,7 @@
 					"id": 0,
 					"name": "文章内容",
 					"pathName": "pages/content/content",
-					"query": "id=3",
+					"query": "id=10",
 					"scene": null
 				}
 			]
