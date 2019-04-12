@@ -1,0 +1,44 @@
+<!-- pages/content/content.wxml -->
+<!-- <text>pages/content/content.wxml</text> -->
+<view class="container">
+    <view class="header">
+        <text class="title">{{articleDetail.title}}</text>
+    </view>
+    <view class="avator">
+        <!-- <navigator ></navigator> -->
+        <text class="author">{{articleDetail.author}}</text>
+        <text class="pushTime">{{articleDetail.publishTime}}</text>
+    </view>
+    <view class="showPannel">
+        <swiper autoplay="{{true}}"
+                indicator-dots="{{true}}"
+                interval="{{2000}}"
+                duration="{{500}}"
+                circular="{{true}}">
+        <block wx:for="{{articleDetail.banner}}" wx:key="{{this}}">
+            <swiper-item >
+               <image src="{{item}}"  />
+            </swiper-item>
+        </block>
+        </swiper>
+    </view>
+    <view class="content">
+        <text decode="true">{{filter(articleDetail.content)}}</text>
+    </view>
+    <view class="footer">
+        <text class="read">阅读:{{articleDetail.readNum}}</text>
+    </view>
+</view>
+<wxs module="filter">
+    var filter = function(text){
+        if(text){
+            var reg = getRegExp("\\n","g");
+            console.log(reg);
+            return text.replace(reg,"\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+        }else{
+           return 
+        }
+        
+    }
+    module.exports =filter 
+</wxs>

@@ -1,0 +1,49 @@
+/* pages/content/content.wxss */
+.container{
+    background-color:#fff;
+    width:100%;
+}
+
+.header{
+    width:100%;
+    text-align:center;
+    margin:10rpx 5rpx;
+}
+.header >.title{
+    width:100%;
+    font-size:40rpx;
+  
+}
+.avator{
+    font-size:30rpx;
+    margin:10rpx;
+    color:#999;
+}
+.avator>.author{
+    color:#0077ff;
+    margin-right:10rpx;
+}
+.showPannel{
+    width:100%;
+    
+}
+.showPannel > swiper{
+    height:560rpx;
+}
+.showPannel image{
+    display: inline-block;
+    overflow: hidden;
+    width:750rpx;
+    height:560rpx;
+}
+.content{
+    margin:20rpx 10rpx;
+    text-indent:2em;
+    line-height:1.43rem;
+}
+.content >text{
+    text-indent:2em;
+}
+.read{
+    color:#999
+}

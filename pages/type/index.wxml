@@ -14,7 +14,7 @@
         </view>
     </view>
     <view class="list-container" wx:for="{{articleList}}" wx:key="{{id}}">
-        <view class="article">
+        <view class="article" data-articleid = "{{item.id}}"  bindtap="onarticle">
             <view class="user">
                 <image src="{{item.markPeopleAvatar}}" class="user-image"></image>
                 <text>{{item.markPeople}}</text>

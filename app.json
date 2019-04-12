@@ -1,9 +1,10 @@
 {
   "pages": [
-   
     "pages/index/index",
-    "pages/type/index"
-   
+    "pages/type/index",
+    "pages/content/content"
+    
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
