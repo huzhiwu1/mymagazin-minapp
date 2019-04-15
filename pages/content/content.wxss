@@ -75,4 +75,78 @@
     margin-left:20rpx;
     
 }
+/* 写音乐组件 */
 
+.audio{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items:center;
+    width:90%;
+    margin:0 auto;
+    background-color:rgba(0,0,0,0.02);
+    border:1px solid rgba(0,0,0,0.05)
+
+}
+.left{
+    height:200rpx;
+    line-height:250rpx;
+    flex: 1 1 auto;
+    margin:0 20rpx;
+
+
+}
+.left>image{
+    display:inline-block;
+    width:80rpx;
+    height:80rpx;
+    
+}
+.right{
+    flex: 3 3 auto;
+    margin-right:20rpx;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+.title{
+    font-size:40rpx;
+
+}
+.from{
+    margin:20rpx 0;
+    font-size:30rpx;
+    color:#777;
+}
+.showProgress{
+    width:100%;
+    font-size:30rpx;
+    color:#777;
+}
+.showProgress>proogress{
+    margin-bottom:20rpx;
+}
+
+.circle{
+    bottom:17rpx;
+    position:relative;
+    width:20rpx;
+    height:20rpx;
+    border-radius:50%;
+    background-color:rgb(9,187,7)
+}
+.audioTime{
+    width:100%;
+    margin-right:20rpx;
+
+}
+.start,.end{
+    font-size:30rpx;
+    color:#777;
+}
+.start{
+    float:left;
+}
+.end{
+    float:right;
+}

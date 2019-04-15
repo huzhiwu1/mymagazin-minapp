@@ -27,6 +27,28 @@
                 </cover-view>
             </cover-view>
         </video>
+        <view wx:if="{{articleDetail.audio.src}}"class="audio">
+            <view class="left" bindtap="onAudioPlay">
+                <image src="{{playing?'/image/icon/Icon_pause.png':'/image/icon/icon_play.png'}}" />
+            </view>
+            <view class="right">
+                <text class="title">{{articleDetail.audio.title}}</text>
+                <text class="from">{{articleDetail.audio.from}}</text>
+                <view class="showProgress">
+                    <progress percent="{{currentPercent}}" style="width:{{progressWidth+'rpx'}}"/>
+                    <view class="circle"
+                        bind:touchstart="onAudioCircleStart"
+                        bind:touchmove="onAudioCircleMove"
+                        style="left:{{percentCircleLeft+'rpx'}}"
+                    ></view>
+                    
+                </view>
+                <view class="audioTime">
+                    <text class="start">{{endtime(currentTime)}}</text>
+                    <text class="end">{{endtime(articleDetail.audio.duration)}}</text>
+                </view>
+            </view>
+        </view>
     </view>
     <view class="content">
         <text decode="true">{{filter(articleDetail.content)}}</text>
@@ -35,3 +57,16 @@
         <text class="read">阅读:{{articleDetail.readNum}}</text>
     </view>
 </view>
+<wxs module="endtime">
+    var endtime = function(time){
+        var miniute = Math.floor(time/60);
+        var seconds = time%60;
+        if(seconds.toString().length==1){
+             return miniute+":0"+seconds.toString();
+        }else{
+            return miniute+":"+seconds
+        }
+       
+    }
+    module.exports = endtime
+</wxs>
